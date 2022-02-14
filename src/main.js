@@ -12,6 +12,4 @@ import Scaff from "@scaff/vite";
 try {
   // Create App use Scaff
   new Scaff(Main);
-} catch (e) {
-  // Any Error
-}
+} catch (e) {}

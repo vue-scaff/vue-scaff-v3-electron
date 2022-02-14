@@ -1,28 +1,41 @@
 {
-  "name": "vue-scaff-v3-desktop",
-  "version": "1.0.0",
+  "name": "vite-vue-electron",
   "author": "joenix",
+  "version": "0.0.1",
+  "main": "electron/electron.js",
   "scripts": {
     "start": "scaff-electron-start",
-    "build": "node electron/build.js && electron-builder -c electron/builder.json",
-    "build:win": "node electron/build.js && electron-builder -c electron/builder.json --win",
-    "build:mac": "node electron/build.js && electron-builder -c electron/builder.json --mac",
-    "build:linux": "node electron/build.js && electron-builder -c electron/builder.json --linux"
+    "build": "scaff-electron-build"
   },
-  "main": "electron/main.js",
   "dependencies": {
-    "@scaff/vite": "^3.5.20",
-    "ant-design-vue": "^3.0.0-alpha.16",
-    "chalk": "^4.1.2"
+    "@scaff/vite": "^3.5.23",
+    "ant-design-vue": "^3.0.0-alpha.16"
   },
   "devDependencies": {
-    "@scaff/electron": "^3.5.22",
+    "@scaff/electron": "^3.5.25",
     "@scaff/typescript": "^3.5.15",
-    "@scaff/vite-plugin-node": "^3.5.21",
+    "@scaff/vite-plugin-node": "^3.5.23",
     "@vitejs/plugin-vue": "^2.0.1",
-    "vite": "^2.7.13",
-    "vue-tsc": "^0.30.1"
+    "typescript": "^4.3.2",
+    "vite": "^2.7.9",
+    "vue-tsc": "^0.31.2"
   },
-  "license": "MIT",
-  "repository": "https://github.com/vue-scaff/vue-scaff-v3-desktop.git"
+  "build": {
+    "appId": "com.vue-scaff.electron",
+    "productName": "vue-scaff-electron",
+    "copyright": "Copyright © 2022 ${author}",
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "buildResources": "src/assets",
+      "output": "release"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {}
+  }
 }
