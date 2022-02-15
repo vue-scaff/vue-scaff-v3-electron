@@ -16,4 +16,10 @@ yarn build
 
 Configure `electron-builder` in `package.json`
 
-> [DOCS](https://www.electron.build/)
+> [Docs](https://www.electron.build/)
+
+## Troubleshooting
+
+> On slower networks, it may be advisable to use the `--verbose` flag in order to show download progress:
+
+[See More](https://www.electronjs.org/docs/latest/tutorial/installation#troubleshooting)
