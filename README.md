@@ -1,5 +1,7 @@
 # vue-scaff-v3-desktop
 
+> electron + vite2 + vue3 + vue-scaff3
+
 ## How to use ?
 
 ```sh
