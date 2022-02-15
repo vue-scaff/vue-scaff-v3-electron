@@ -1,50 +1,61 @@
+// Use Path
 const path = require("path");
+
+// Use Electron
 const { app, BrowserWindow } = require("electron");
 
-const isDev = process.env.IS_DEV == "true" ? true : false;
+// Check Dev Mode
+const DEV = process.env.IS_DEV == "true" ? true : false;
 
+// Set Resolve
+const resolve = (url) => path.join(__dirname, url);
+
+// Set Create Window Func
 function createWindow() {
+  /**
+   * 1. Default Port of Vite is 3000
+   * 2. Build for Local Protocol as File
+   * 3. Do not use `process.cwd()` instead of `path`
+   * ========== =========== ==========
+   */
+  const link = DEV
+    ? "http://localhost:3000"
+    : `file://${resolve("../dist/index.html")}`;
+
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+  const main = new BrowserWindow({
+    width: 1440,
+    height: 900,
     webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
+      preload: resolve("preload.js"),
       nodeIntegration: true,
     },
   });
-  console.log(process.env.NODE_ENV);
-  // and load the index.html of the app.
-  // win.loadFile("index.html");
-  mainWindow.loadURL(
-    isDev
-      ? "http://localhost:3000"
-      : `file://${path.join(__dirname, "../dist/index.html")}`
-  );
-  // Open the DevTools.
-  if (/*isDev*/ true) {
-    mainWindow.webContents.openDevTools();
+
+  // Load the `index.html` of App
+  main.loadURL(link);
+
+  // Open the Tools in Dev Mode
+  if (DEV) {
+    main.webContents.openDevTools();
   }
 }
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
+// Any APIs must be used after this Event Occurs.
 app.whenReady().then(() => {
-  console.log(2222);
+  // Create Front Window
   createWindow();
 
-  app.on("activate", function () {
-    console.log(1111);
-    // On macOS it's common to re-create a window in the app when the
-    // dock icon is clicked and there are no other windows open.
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  // On App Active
+  app.on("activate", () => {
+    // Only one Window Live
+    if (!BrowserWindow.getAllWindows().length) {
+      createWindow();
+    }
   });
 });
 
-// Quit when all windows are closed, except on macOS. There, it's common
-// for applications and their menu bar to stay active until the user quits
-// explicitly with Cmd + Q.
+// Explicitly with `Command` + `Q`
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();
