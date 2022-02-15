@@ -12,6 +12,6 @@ yarn build
 
 ## Build Configures
 
-Configures with `electron-builder` is in `package.json`
+Configure `electron-builder` in `package.json`
 
 > [DOCS](https://www.electron.build/)
