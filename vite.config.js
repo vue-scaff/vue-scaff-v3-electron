@@ -17,7 +17,7 @@ const vueScaffConf = {};
 export default defineConfig({
   plugins: [vue(), scaff(vueScaffConf)],
 
-  base: process.env.ELECTRON == "true" ? "./" : ".",
+  base: process.env.ELECTRON == "true" ? "./" : "",
 
   optimizeDeps: {
     exclude: [`@scaff/vite-plugin-node`, `@scaff/vite`],

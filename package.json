@@ -12,7 +12,7 @@
     "ant-design-vue": "^3.0.0-alpha.16"
   },
   "devDependencies": {
-    "@scaff/electron": "^3.5.25",
+    "@scaff/electron": "^3.5.26",
     "@scaff/typescript": "^3.5.15",
     "@scaff/vite-plugin-node": "^3.5.23",
     "@vitejs/plugin-vue": "^2.0.1",

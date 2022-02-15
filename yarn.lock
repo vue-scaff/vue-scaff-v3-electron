@@ -1209,10 +1209,10 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
-"@scaff/electron@^3.5.25":
-  version "3.5.25"
-  resolved "https://registry.yarnpkg.com/@scaff/electron/-/electron-3.5.25.tgz#af31aa11e488008dba9e495a8098748b59b1cd76"
-  integrity sha512-P4BVdbrwJsgK4pDBQvBW6okCsQAty6sIyCvv8+33yHS2cJKObbZEI3yJrnE7GUy5sMD1WAnYRtUeQoh1MUq4dA==
+"@scaff/electron@^3.5.26":
+  version "3.5.26"
+  resolved "https://registry.yarnpkg.com/@scaff/electron/-/electron-3.5.26.tgz#d68a8ca728164ae184e4e8079caa240ed6b46fef"
+  integrity sha512-9k0uhV/rlSA/rfzXtwUWzG5qQxTCsop+DgO32ZxvOcbNOTuYWrKA6gnMn1S7fuhOrkld/H1x9+QedjqpW6CSuw==
   dependencies:
     concurrently "^7.0.0"
     cross-env "^7.0.3"
