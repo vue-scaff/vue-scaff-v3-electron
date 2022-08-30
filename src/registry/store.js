@@ -1,7 +1,7 @@
 export default ({}) => {
   const state = {
     alive: ['start'],
-    oss: `//oss.joenix.com/vue-scaff`,
+    oss: `https://oss.vue-scaff.com`,
   };
 
   const mutations = {};

@@ -1,3 +1,3 @@
 export default {
-  host: 'http://oss.vue-scaff.com',
+  host: `https://oss.vue-scaff.com`,
 };

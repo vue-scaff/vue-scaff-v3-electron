@@ -9,6 +9,9 @@ import * as Icons from '@ant-design/icons-vue';
  * ========== ========== ==========
  */
 export default ({ app, util, route, store, style, i18n, $http, md, custom }, next) => {
+  // Electron only support `hash` mode
+  route.proxy.config = () => ({ mode: `hash` });
+
   // Extension Antv
   app.use(Antv);
 

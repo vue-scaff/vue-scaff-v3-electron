@@ -1,14 +1,14 @@
 // Use Path
-const path = require("path");
+const path = require('path');
 
 // Use Electron
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow } = require('electron');
 
 // Check Dev Mode
-const DEV = process.env.IS_DEV == "true" ? true : false;
+const DEV = process.env.IS_DEV == 'true' ? true : false;
 
 // Set Resolve
-const resolve = (url) => path.join(__dirname, url);
+const resolve = url => path.join(__dirname, url);
 
 // Set Create Window Func
 function createWindow() {
@@ -18,16 +18,14 @@ function createWindow() {
    * 3. Do not use `process.cwd()` instead of `path`
    * ========== =========== ==========
    */
-  const link = DEV
-    ? "http://localhost:5173"
-    : `file://${resolve("../dist/index.html")}`;
+  const link = DEV ? 'http://localhost:5173' : `file://${resolve('../dist/index.html')}`;
 
   // Create the browser window.
   const main = new BrowserWindow({
     width: 1440,
     height: 900,
     webPreferences: {
-      preload: resolve("preload.js"),
+      preload: resolve('preload.js'),
       nodeIntegration: true,
     },
   });
@@ -47,7 +45,7 @@ app.whenReady().then(() => {
   createWindow();
 
   // On App Active
-  app.on("activate", () => {
+  app.on('activate', () => {
     // Only one Window Live
     if (!BrowserWindow.getAllWindows().length) {
       createWindow();
@@ -56,8 +54,8 @@ app.whenReady().then(() => {
 });
 
 // Explicitly with `Command` + `Q`
-app.on("window-all-closed", () => {
-  if (process.platform !== "darwin") {
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
     app.quit();
   }
 });
