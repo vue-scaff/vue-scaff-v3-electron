@@ -19,7 +19,7 @@ function createWindow() {
    * ========== =========== ==========
    */
   const link = DEV
-    ? "http://localhost:3000"
+    ? "http://localhost:5173"
     : `file://${resolve("../dist/index.html")}`;
 
   // Create the browser window.

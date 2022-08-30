@@ -8,7 +8,11 @@ export default ({ hello, $http, $api }) => {
 
   const mutations = {};
 
-  const actions = {};
+  const actions = {
+    async GET_MOCK() {
+      return await $http($api.mock).get();
+    },
+  };
 
   return { state, mutations, actions };
 };

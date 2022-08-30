@@ -1,6 +1,6 @@
 export default () => {
   return {
-    path: '/start',
+    path: '/',
     name: 'start',
     component: () => import('@/pages/start/index.vue'),
   };

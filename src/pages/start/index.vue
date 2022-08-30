@@ -9,7 +9,7 @@
   <git :url="start.git" />
 
   <!-- Sholder -->
-  <shold />
+  <shold :author="author" :cash="cash" />
 
   <!-- Screen Welcome -->
   <screen class="welcome">
@@ -18,5 +18,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      author: '',
+      cash: 0,
+    };
+  },
+
+  async mounted() {
+    const { author, cash } = await this.$store.dispatch('start/GET_MOCK');
+
+    this.author = author;
+    this.cash = cash;
+  },
+};
 </script>

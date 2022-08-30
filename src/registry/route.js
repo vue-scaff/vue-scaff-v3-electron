@@ -5,10 +5,4 @@ export default [
       name: '404',
     },
   },
-  {
-    path: '/',
-    redirect: {
-      name: 'start',
-    },
-  },
 ];

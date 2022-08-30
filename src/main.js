@@ -1,8 +1,8 @@
 // Import Main
-import Main from "@/scaff";
+import Main from '@/scaff';
 
 // Import Scaff
-import Scaff from "@scaff/vite";
+import Scaff from '@scaff/vite';
 
 /**
  * Issue: https://github.com/vitejs/vite/issues/3033
@@ -12,4 +12,5 @@ import Scaff from "@scaff/vite";
 try {
   // Create App use Scaff
   new Scaff(Main);
-} catch (e) {}
+}
+catch (e) {}

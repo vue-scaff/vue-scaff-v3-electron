@@ -1,24 +1,24 @@
 {
-  "name": "vite-vue-electron",
+  "name": "vue-scaff-electron",
   "author": "joenix",
-  "version": "0.0.1",
+  "description": "vue-scaff-electron based-on vite + vue3",
+  "version": "3.0.1",
   "main": "electron/electron.js",
   "scripts": {
     "start": "scaff-electron-start",
     "build": "scaff-electron-build"
   },
   "dependencies": {
-    "@scaff/vite": "^3.5.23",
-    "ant-design-vue": "^3.0.0-alpha.16"
+    "@scaff/vite": "^3.5.71",
+    "ant-design-vue": "^3.3.0-beta.3"
   },
   "devDependencies": {
-    "@scaff/electron": "^3.5.26",
-    "@scaff/typescript": "^3.5.15",
-    "@scaff/vite-plugin-node": "^3.5.23",
-    "@vitejs/plugin-vue": "^2.0.1",
-    "typescript": "^4.3.2",
-    "vite": "^2.7.9",
-    "vue-tsc": "^0.31.2"
+    "@scaff/electron": "^3.5.77",
+    "@scaff/typescript": "^3.5.74",
+    "@scaff/vite-plugin-node": "^3.5.53",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "vite": "^3.0.7",
+    "vue-tsc": "^0.40.1"
   },
   "build": {
     "appId": "com.vue-scaff.electron",

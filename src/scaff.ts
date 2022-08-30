@@ -1,28 +1,35 @@
 // Use Antv
-import * as Antv from "ant-design-vue";
+import * as Antv from 'ant-design-vue';
 
 // Use Antv Icons
-import * as Icons from "@ant-design/icons-vue";
+import * as Icons from '@ant-design/icons-vue';
 
 /**
  * Scaffold by Joenix
  * ========== ========== ==========
  */
-export default ({ app, util, route }: object, next: void) => {
+export default ({ app, util, route, store, style, i18n, $http, md, custom }, next) => {
   // Extension Antv
   app.use(Antv);
 
   // Register Icons
-  util.get().foreach(Icons, (icon: any, key: any) => app.component(key, icon));
+  util.get().foreach(Icons, (icon, key) => app.component(key, icon));
 
   // Extension Icons
   app.config.globalProperties.$icons = Icons;
 
-  // Set Route Mode to `hash`
-  route.proxy.config = (settings) => {
-    return {
-      mode: "hash",
-    };
+  // Http Interceptor
+  $http.interceptor.resultParse = async result => {
+    // Success if Status is 200
+    if (result.status === 200) {
+      return result.data;
+    }
+
+    // Errors
+    Antv.message(result.message);
+
+    // Any
+    return result;
   };
 
   // Running
